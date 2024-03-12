@@ -15,7 +15,6 @@ const NavBar = () => {
   const handleMenu = ()=>{
     setOpen((prev)=> !prev);
     console.log(open)
-    console.log('ramdan karem')
   
   }
   return (
@@ -64,9 +63,9 @@ const NavBar = () => {
    
  
  </nav>
- <div className='max-lg:hidden '>
+ <div className='max-lg:hidden object-contain pt-8   mx-auto max-container'>
  
- {open ?(<form className='  flex w-auto gap-4 sm:border sm:border-slate-gray rounded-full  hover:bg-gray-75 p-2 object-contain'>
+ {open ?(<form className='  flex w-auto gap-4 sm:border sm:border-slate-gray rounded-full  hover:bg-gray-75 p-3'>
  <input type='text' placeholder='find your shoes' className='input ' autoComplete='auto' />
  <button className='text-bold text-xl text-coral-red'>  submit </button>
  <button onClick={handleMenu}  className=' text-black cursor-pointer '>
