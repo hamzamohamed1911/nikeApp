@@ -49,7 +49,7 @@ return (
               <div className='mt-10  flex  '>
               <p >
                  <Image className='animate-spin h-5 w-5 mr-3' src={loaderIcon} alt='loaderIcon' />
-                Loading ...
+                Loading <span className="animate-ping"> . </span>  <span className="animate-ping"> . </span> <span className="animate-ping"> . </span>
                 </p>
               </div>
       )}
