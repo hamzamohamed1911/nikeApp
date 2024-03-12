@@ -1,11 +1,18 @@
+'use client'
+
 import React from 'react'
 import Button from './Button';
 import Image from 'next/image';
 import { arrowRight } from '@/app/assets/icons';
 import { offer } from '@/app/assets/images';
+import { useRouter } from 'next/navigation';
 
 
 const SpecialOffers = () => {
+  const router = useRouter()
+  const shopHandler =()=>{
+    router.push('/products')
+  }
   return (
     <section className='flex justify-wrap items-center max-xl:flex-col-reverse gap-10'>
       <div className=' flex-1 flex-col'>
@@ -30,7 +37,7 @@ const SpecialOffers = () => {
           nothing short of exceptional.
         </p>
       <div className='mt-11 flex flex-wrap gap-6 '>
-      <Button label="Shop Now"  iconURL={arrowRight}/>
+      <Button label="Shop Now" handleClick={shopHandler} iconURL={arrowRight}/>
 
        <Button
             label='Learn more'

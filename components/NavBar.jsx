@@ -5,7 +5,7 @@ import React from 'react';
 import { headerLogo } from '@/app/assets/images';
 import NavLink from './nav-link';
 import { useState } from 'react';
-import { FaTimes,FaBars } from "react-icons/fa";
+import { FaTimes,FaBars ,FaArrowRight   } from "react-icons/fa";
 import { CiSearch } from "react-icons/ci";
 import Link from 'next/link';
 
@@ -48,8 +48,6 @@ const NavBar = () => {
       </ul>}
 
 
-   
-
      <div className='flex gap-4  '>
 
      <div className=' hidden max-2xl:block ' >
@@ -63,7 +61,7 @@ const NavBar = () => {
    
  
  </nav>
- <div className='max-lg:hidden object-contain pt-8   mx-auto max-container'>
+ <div className='max-lg:hidden object-contain pt-8  mx-auto max-container'>
  
  {open ?(<form className='  flex w-auto gap-4 sm:border sm:border-slate-gray rounded-full  hover:bg-gray-75 p-3'>
  <input type='text' placeholder='find your shoes' className='input ' autoComplete='auto' />
@@ -89,7 +87,11 @@ const NavBar = () => {
                               </Link>
 
                       ))} 
+                         <form >
+                            <input type='text' placeholder='search' className='input text-[#ffffff] bg-[#2d2d2d]  rounded-full p-3  gap-3 'autoComplete='auto' />       
+                         </form>
             </div>
+
       ):null}    
 
 </header>

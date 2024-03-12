@@ -15,8 +15,8 @@ export default function RootLayout({ children }) {
   <body className="relative " >
         <NavBar/>
         {children}
-        <section className="bg-black padding-x padding-t pb-8">
-        <Footer />
+        <section className= "relative bg-black padding-x padding-t pb-8">
+        <Footer className='absolute bottom-0'/>
          </section>
          <ScrollToTopButton/>
         </body>

@@ -9,8 +9,10 @@ import { useRef } from "react";
 export default function ForgotPassword() {
     const router = useRouter();
     const email = useRef()
+
     const handleSubmit =(e)=>{
     e.preventDefault();
+    
     const enteredEmail = email.current.value;
     console.log(enteredEmail)
     router.push('/login')
