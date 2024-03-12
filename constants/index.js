@@ -5,10 +5,10 @@ import { bigShoe1, bigShoe2, bigShoe3, customer1, customer2, shoe4, shoe5, shoe6
 
 
 export const navLinks = [
-    { href: "/", label: "Home" },
-    { href: "/about", label: 'About Us' },
+    { href: "/home", label: "Home" },
+    
+    { href: "/company", label: 'Company' },
     { href: "/products", label:'Products' },
-
     {href:'/login', label:'Sign in / Explore more'}
     
 ];
@@ -112,7 +112,7 @@ export const footerLinks = [
     {
         title: "Help",
         links: [
-            { name: "About us", link: "/" },
+            { name: "About us", link: "/about" },
             { name: "FAQs", link: "/" },
             { name: "How it works", link: "/" },
             { name: "Privacy policy", link: "/" },
