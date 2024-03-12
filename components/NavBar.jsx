@@ -15,6 +15,7 @@ const NavBar = () => {
   const handleMenu = ()=>{
     setOpen((prev)=> !prev);
     console.log(open)
+    console.log('ramdan karem')
   
   }
   return (
