@@ -9,7 +9,7 @@ export const navLinks = [
     
     { href: "/company", label: 'Company' },
     { href: "/products", label:'Products' },
-    {href:'/login', label:'Sign in / Explore more'}
+
     
 ];
 export const navLinksAuth = [

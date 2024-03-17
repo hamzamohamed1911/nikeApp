@@ -20,6 +20,7 @@ import shoe8 from './shoe8.png'
 import thumbnailShoe1 from './thumbnail-shoe1.svg'
 import thumbnailShoe2 from './thumbnail-shoe2.svg'
 import thumbnailShoe3 from './thumbnail-shoe3.svg'
+import cr7 from './cr7.png'
 
 
 export {
@@ -45,5 +46,6 @@ export {
     thumbnailShoe1,
     thumbnailShoe2,
     thumbnailShoe3,
+    cr7,
    
 }

@@ -5,7 +5,7 @@ import ShowMore from '@/app/products/(productsFils)/ShowMore';
 import { useState ,useEffect, useContext} from 'react';
 import { loaderIcon } from '../assets/icons';
 import Image from 'next/image';
-import { APIContext } from './(store)/api-context';
+import { APIContext } from '../../store/api-context';
 
 
 const Products = () => {

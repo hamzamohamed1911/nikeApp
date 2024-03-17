@@ -5,10 +5,14 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { isEmail,hasMinLength ,isNotEmpty } from "@/util/validation";
+import { useAuth } from "@/store/Auth-context";
 
 
 
 export default function Login() {
+	const { setIsLoggedIn} =useAuth()
+  
+
     const [didEdit, setdidEdit] = useState({
 		email:false,
 		password:false,
@@ -60,6 +64,7 @@ const router = useRouter()
 		console.log(enteredValues)
 		setEnteredValues({email:'',password:''})
 		router.push('products')
+		setIsLoggedIn(true)
 		}
 	
 	

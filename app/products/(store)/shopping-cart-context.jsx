@@ -1,6 +1,6 @@
 'use client'
 import { createContext , useContext, useReducer } from "react";
-import { APIContext } from "./api-context";
+import { APIContext } from "@/store/api-context";
 
 
 
@@ -10,8 +10,11 @@ addItemToCart:() => {},
 updateItemQuantity:()=>{},
 
 });
+
 const shopingCartReducer = (state,action)=>{
+  
   const { allShoes} =useContext(APIContext);
+
   if(action.type ==='ADD_ITEM'){
 
     const updatedItems = [...state.items];
@@ -45,6 +48,7 @@ const shopingCartReducer = (state,action)=>{
     
   }
 
+
   if(action.type==='UPDATE_ITEM'){
     const updatedItems = [...state.items];
     const updatedItemIndex = updatedItems.findIndex(
@@ -70,8 +74,11 @@ const shopingCartReducer = (state,action)=>{
   }
   return state;
   
+
 }
+
 export default function CartContextProvider({children}){
+  
   const [shonpigCardState,shopingCardDispatch] = useReducer(shopingCartReducer ,{
     items: [],
   })

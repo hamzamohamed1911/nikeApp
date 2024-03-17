@@ -2,21 +2,28 @@
 import Image from 'next/image';
 import { navLinks } from '@/constants';
 import React from 'react';
-import { headerLogo } from '@/app/assets/images';
+import {  headerLogo } from '@/app/assets/images';
 import NavLink from './nav-link';
 import { useState } from 'react';
 import { FaTimes,FaBars ,FaArrowRight   } from "react-icons/fa";
 import { CiSearch } from "react-icons/ci";
 import Link from 'next/link';
 
+import { useAuth } from '@/store/Auth-context';
+import UserDropdown from './UserDropdown';
+
 
 const NavBar = () => {
   const [open, setOpen] = useState(false);
+  
   const handleMenu = ()=>{
     setOpen((prev)=> !prev);
     console.log(open)
   
   }
+  const {isLoggedIn} =useAuth()
+  
+
   return (
     <header className=' padding-x py-8  z-10 w-full max-lg:bg-black  '>
       <nav className='flex justify-between items-center mx-auto max-container sm:w-screen	sm:px-0 '>
@@ -28,15 +35,19 @@ const NavBar = () => {
         </NavLink>
       </div>
         
-     { open == false && <ul className='flex-1 flex justify-center items-center gap-16  max-lg:hidden'>
-        
+     { open == false && <ul className=' flex-1 flex max-lg:hidden'>
+     <div className='flex-1 flex justify-center items-center gap-16'>
         {navLinks.map((item)=>(  
           
-            <NavLink  key={item.label} href={item.href} className="font-monts errat leading-normal text-lg text-slate-gray transition-all hover:-translate-y-1 hover:scale-110 duration-300 " >
+            <NavLink  key={item.label} href={item.href}  >
             {item.label}
             </NavLink>
           
         ))}
+           
+       {!isLoggedIn  &&<NavLink href='/login'>
+         Sign in / Explore more
+        </NavLink>}
     <div className='flex items-center'>
      <button onClick={handleMenu}  className=' text-black '>
     
@@ -45,10 +56,15 @@ const NavBar = () => {
      </button>
     
   </div>
+
+ </div>
+
+ 
       </ul>}
 
 
-     <div className='flex gap-4  '>
+     <div className='flex  items-center justify-center'>
+     {isLoggedIn && <UserDropdown/> }
 
      <div className=' hidden max-2xl:block ' >
          <button onClick={handleMenu} className=' text-white focus:ring-white ' >
@@ -87,6 +103,9 @@ const NavBar = () => {
                               </Link>
 
                       ))} 
+                      <Link className='text-white hover:bg-gray-700  block px-3 py-3 rounded-md text-base font-medium ' href='/login'>
+                     Sign in / Explore more
+                      </Link>
                          <form >
                             <input type='text' placeholder='search' className='input text-[#ffffff] bg-[#2d2d2d]  rounded-full p-3  gap-3 'autoComplete='auto' />       
                          </form>
