@@ -7,10 +7,10 @@ import { useState } from "react";
 import { isEmail,hasMinLength ,isNotEmpty } from "@/util/validation";
 import { useAuth } from "@/store/Auth-context";
 
-
-
 export default function Login() {
-	const { setIsLoggedIn} =useAuth()
+	const { setIsLoggedIn  ,logIn} =useAuth()
+	const [error, setError] = useState('');
+	const router = useRouter();
   
 
     const [didEdit, setdidEdit] = useState({
@@ -50,23 +50,22 @@ export default function Login() {
 
 	}
 
-const router = useRouter()
-  const handleSubmit= (e)=>{
-	
+  const handleSubmit= async(e)=>{
+
 	e.preventDefault();
 
-	if(emailIsInvalid || PasswordIsInvalid  )
-	{
-		return;
-		
-		
-	}else{
-		console.log(enteredValues)
-		setEnteredValues({email:'',password:''})
-		router.push('products')
+	setError("");
+
+    try{
+		await logIn(enteredValues.email ,enteredValues.password);
 		setIsLoggedIn(true)
-		}
-	
+		setEnteredValues({email:'',password:''})
+		router.push('/products');
+	  }catch(err){
+		setError(err.message);
+		console.log(error)
+	  }
+	  
 	
   }
     return(
@@ -84,6 +83,7 @@ const router = useRouter()
 				<div>
 					<h1 className="text-2xl font-bold text-center pt-2">Login </h1>
 				</div>
+				{error && <h1 className="bg-primary text-white" > {error}</h1>}
 				
 				<div className="divide-y divide-gray-200">
 					<div className="py-8 text-base leading-6 space-y-4 text-gray-700 sm:text-lg sm:leading-7">

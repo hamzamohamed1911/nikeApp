@@ -1,12 +1,10 @@
 'use client'
-import { createContext ,useState ,useContext } from "react";
-const AuthContext =  createContext()
+import { createContext ,useState ,useContext, useEffect } from "react";
+import {createUserWithEmailAndPassword ,getAuth ,signInWithEmailAndPassword, onAuthStateChanged ,signOut , sendPasswordResetEmail } from "firebase/auth";
+import { Auth } from "@/lib/firebase/config";
 
-export const useAuth =()=>{
+const AuthContext =  createContext();
 
-return useContext(AuthContext)
-
-}
  
 export function AuthProvider ({children}){
     const [authUser, setAuthUser] = useState(false)
@@ -14,12 +12,36 @@ export function AuthProvider ({children}){
     const [isLoggedIn, setIsLoggedIn] = useState(false);
    
 
+const signUp =  (email,password)=>{
+    createUserWithEmailAndPassword( Auth, email,password)
+}
+const logIn =  (email,password)=>{
+    signInWithEmailAndPassword( Auth, email,password)
+}
+const logOut = ()=>{
+return signOut(Auth);
+}
+const resetPassword = (email)=>{
+    sendPasswordResetEmail(Auth,email)
+
+}
+useEffect(()=>{
+    const unSubscribe =onAuthStateChanged(Auth , (currentUser)=>{
+        setAuthUser(currentUser);
+    });
+    return ()=>{ unSubscribe()}
+
+},[]);
 
     const value = {
         authUser,
         setAuthUser,
         isLoggedIn,
-        setIsLoggedIn
+        setIsLoggedIn,
+        signUp,
+        logIn,
+        logOut,
+        resetPassword
     }
     
 
@@ -31,3 +53,7 @@ export function AuthProvider ({children}){
 
     
 }
+export const useAuth =()=>{
+    return useContext(AuthContext)
+    
+    }

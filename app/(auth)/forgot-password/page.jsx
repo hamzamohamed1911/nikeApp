@@ -3,19 +3,30 @@ import { arrowRight } from "@/app/assets/icons";
 import Button from "@/components/Button";
 import { useRouter } from "next/navigation";
 import { useRef } from "react";
+import { useAuth } from '@/store/Auth-context';
 
 
 
 export default function ForgotPassword() {
+
+ const {resetPassword}= useAuth();
     const router = useRouter();
     const email = useRef()
 
-    const handleSubmit =(e)=>{
+    const handleSubmit =async (e)=>{
+
     e.preventDefault();
-    
     const enteredEmail = email.current.value;
-    console.log(enteredEmail)
-    router.push('/login')
+
+    try{
+      await resetPassword(enteredEmail)
+      router.push('/login')
+      console.log(enteredEmail)
+  }catch(err){
+    console.log(err.message)
+
+  }
+    
 
    }
     return (
