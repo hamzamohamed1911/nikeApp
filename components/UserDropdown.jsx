@@ -1,7 +1,10 @@
+'use client'
 import { cr7 } from '@/app/assets/images'
 import { useAuth } from '@/store/Auth-context';
 import Image from 'next/image'
 import Link from 'next/link'
+import { useRouter } from 'next/navigation';
+
 import React, { useState } from 'react'
 
 
@@ -9,18 +12,24 @@ const UserDropdown = () => {
  const {authUser ,logOut}= useAuth();
     const [open, setOpen] = useState(false);
     const { setIsLoggedIn} =useAuth()
-
+    const route = useRouter()
     const handleLogOut= async (e)=>{
+ 
+      
         e.preventDefault();
         try{
             await logOut()
+         
+            
         }catch(err){
           console.log(err.message)
 
         }
 
-
+        
         setIsLoggedIn(false)
+        route.push('/login');
+   
       }
 
     const handleDrop = ()=>{

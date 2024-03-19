@@ -103,9 +103,10 @@ const NavBar = () => {
                               </Link>
 
                       ))} 
-                      <Link className='text-white hover:bg-gray-700  block px-3 py-3 rounded-md text-base font-medium ' href='/login'>
+                      {!isLoggedIn  &&  <Link className='text-white hover:bg-gray-700  block px-3 py-3 rounded-md text-base font-medium ' href='/login'>
                      Sign in / Explore more
-                      </Link>
+                      </Link>}
+                  
                          <form >
                             <input type='text' placeholder='search' className='input text-[#ffffff] bg-[#2d2d2d]  rounded-full p-3  gap-3 'autoComplete='auto' />       
                          </form>

@@ -17,6 +17,7 @@ const signUp =  (email,password)=>{
 }
 const logIn =  (email,password)=>{
     signInWithEmailAndPassword( Auth, email,password)
+    setIsLoggedIn(Auth)
 }
 const logOut = ()=>{
 return signOut(Auth);
