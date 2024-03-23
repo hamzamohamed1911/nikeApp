@@ -5,9 +5,9 @@ import Image from 'next/image';
 import { Dialog,Transition } from '@headlessui/react';
 import { arrowRight, closeIcon } from '@/app/assets/icons';
 import Cart from './Cart';
-import Button from '../../../components/Button';
 import { useRouter } from 'next/navigation';
 import { CartContext } from '../(store)/shopping-cart-context';
+import Button from '@/components/Button';
 
 const CartModal = ({isOpen,closeModal }) => {
   const {items} =useContext(CartContext);

@@ -8,7 +8,7 @@ import { useAuth } from "@/store/Auth-context";
 export default function Register() {
   const [passwordWordsAreNotequal, setPasswordWordsAreNotequal] = useState(false);
   const [error, setError] = useState('');
-const {signUp} =useAuth();
+const {signUp } =useAuth();
 
  const router = useRouter();
 
@@ -18,7 +18,6 @@ const {signUp} =useAuth();
     const data = Object.fromEntries(formDataObj.entries());
     e.preventDefault();('')
     setError('');
-    
   
     try{
       await signUp(data.email , data.password);
@@ -88,6 +87,14 @@ const {signUp} =useAuth();
            <div className=" text-coral-red">{passwordWordsAreNotequal &&<p>password must be match </p>}</div>
        </div>
 
+       <div className="relative p-2">
+              
+           <label  id="ImageInput" className="block mb-2 text-sm font-medium text-coral-red dark:text-white" htmlFor="ImageInput">Upload file</label>
+          <input  id="ImageInput" name="ImageInput" className="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" aria-describedby="file_input_help" htmlFor="ImageInput" type="file" required/>
+          <p className="mt-1 text-sm text-gray-500 dark:text-gray-300" id="file_input_help">SVG, PNG, JPG </p>
+                            
+        </div>
+                
 
         <div className="relative">
           <Button type="submit"  label="Sign Up" iconURL={arrowRight}/>                          

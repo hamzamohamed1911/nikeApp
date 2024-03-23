@@ -1,9 +1,10 @@
 'use client'
 import { useState } from 'react';
-import Button from '../../../components/Button';
+
 import CartModal from './CartModal';
 import { CartContext } from '../(store)/shopping-cart-context'; 
 import { useContext } from 'react';
+import Button from '@/components/Button';
 
 
 const Header = () => {

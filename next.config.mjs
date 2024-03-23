@@ -6,10 +6,7 @@ const nextConfig = {
             domains: ['fakestoreapi.com' ,'images.puma.com','assets.adidas.com' ,'static.nike.com']
            
           }
-        
-      
-      
-    
+
 };
 
 export default nextConfig;

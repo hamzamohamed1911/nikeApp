@@ -1,7 +1,8 @@
 'use client'
 import React from 'react';
-import Button from '../../../components/Button';
+
 import { arrowRight } from '@/app/assets/icons';
+import Button from '@/components/Button';
 
 
 const ShowMore = ({pageNumber,isNext ,setLimit}) => {

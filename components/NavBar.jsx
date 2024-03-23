@@ -8,7 +8,6 @@ import { useState } from 'react';
 import { FaTimes,FaBars ,FaArrowRight   } from "react-icons/fa";
 import { CiSearch } from "react-icons/ci";
 import Link from 'next/link';
-
 import { useAuth } from '@/store/Auth-context';
 import UserDropdown from './UserDropdown';
 
@@ -25,7 +24,7 @@ const NavBar = () => {
   
 
   return (
-    <header className=' padding-x py-8  z-10 w-full max-lg:bg-black  '>
+    <header className=' padding-x pt-8 pb-3 z-10 w-full max-lg:bg-black shadow-sm '>
       <nav className='flex justify-between items-center mx-auto max-container sm:w-screen	sm:px-0 '>
         
 
@@ -107,8 +106,11 @@ const NavBar = () => {
                      Sign in / Explore more
                       </Link>}
                   
-                         <form >
-                            <input type='text' placeholder='search' className='input text-[#ffffff] bg-[#2d2d2d]  rounded-full p-3  gap-3 'autoComplete='auto' />       
+                         <form className=' relative'>
+                             
+                            <input type='text' placeholder='search' className='input text-[#ffffff] bg-[#2d2d2d]  rounded-full p-3  gap-3 relative'autoComplete='auto' />      
+                             <button>   <div> <FaArrowRight className='text-white absolute bottom-4 right-4 '/> </div> </button>
+                             
                          </form>
             </div>
 

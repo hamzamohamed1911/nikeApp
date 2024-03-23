@@ -5,6 +5,7 @@ import ScrollToTopButton from '@/components/ScrollToTopButton.jsx';
 import APIContextProvider from "@/store/api-context";
 import { AuthProvider } from "@/store/Auth-context";
 
+
 export const metadata = {
   title: "Just Do It" ,
   description: "CHOOSE YOUR FAVOURITE SHOES ",

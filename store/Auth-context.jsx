@@ -1,16 +1,17 @@
 'use client'
 import { createContext ,useState ,useContext, useEffect } from "react";
-import {createUserWithEmailAndPassword ,getAuth ,signInWithEmailAndPassword, onAuthStateChanged ,signOut , sendPasswordResetEmail } from "firebase/auth";
+import {createUserWithEmailAndPassword  ,signInWithEmailAndPassword, onAuthStateChanged ,signOut , sendPasswordResetEmail } from "firebase/auth";
 import { Auth } from "@/lib/firebase/config";
 
-const AuthContext =  createContext();
+export const AuthContext =  createContext();
 
  
 export function AuthProvider ({children}){
     const [authUser, setAuthUser] = useState(false)
 
     const [isLoggedIn, setIsLoggedIn] = useState(false);
-   
+    
+
 
 const signUp =  (email,password)=>{
     createUserWithEmailAndPassword( Auth, email,password)
@@ -51,10 +52,7 @@ useEffect(()=>{
              {children}
            </AuthContext.Provider>
         )
-
     
 }
-export const useAuth =()=>{
-    return useContext(AuthContext)
-    
-    }
+export const useAuth = () => useContext(AuthContext);
+

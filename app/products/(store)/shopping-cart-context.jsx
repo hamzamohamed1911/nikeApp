@@ -2,8 +2,6 @@
 import { createContext , useContext, useReducer } from "react";
 import { APIContext } from "@/store/api-context";
 
-
-
  export const CartContext =createContext( {
 items : [],
 addItemToCart:() => {},

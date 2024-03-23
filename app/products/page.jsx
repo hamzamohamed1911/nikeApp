@@ -1,11 +1,13 @@
 'use client'
-import Header from '@/app/products/(productsFils)/Header';
-import ProductsCard from '@/app/products/(productsFils)/ProductsCard.jsx';
-import ShowMore from '@/app/products/(productsFils)/ShowMore';
+
+
 import { useState ,useEffect, useContext} from 'react';
-import { loaderIcon } from '../assets/icons';
 import Image from 'next/image';
-import { APIContext } from '../../store/api-context';
+import Header from './(productsFils)/Header';
+import ProductsCard from './(productsFils)/ProductsCard';
+import ShowMore from './(productsFils)/ShowMore';
+import { loaderIcon } from '@/app/assets/icons';
+import { APIContext } from '@/store/api-context';
 
 
 const Products = () => {
