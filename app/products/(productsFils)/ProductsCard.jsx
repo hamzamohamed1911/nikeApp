@@ -12,8 +12,8 @@ const ProductsCard = ({id,category ,price,image ,allShoes,description }) => {
   let [isOpen, setIsOpen] = useState(false);
   let [toastsIsOpen, setToastsIsOpen] = useState(false)
   const { addItemToCart} =useContext(CartContext);
-  const handlleAddedIem =()=>{
 
+  const handlleAddedIem =()=>{
      addItemToCart(id)
      setToastsIsOpen(true)
   }
