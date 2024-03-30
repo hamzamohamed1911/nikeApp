@@ -24,8 +24,8 @@ const NavBar = () => {
   
 
   return (
-    <header className=' padding-x pt-8 pb-3 z-10 w-full max-lg:bg-black shadow-sm '>
-      <nav className='flex justify-between items-center mx-auto max-container sm:w-screen	sm:px-0 '>
+    <header className=' padding-x pt-8 pb-3  w-full max-lg:bg-black  fixed z-30' >
+      <nav className='flex justify-between items-center  content-center mx-auto max-container sm:w-screen	sm:px-0  '>
         
 
       <div className='flex items-center'>
@@ -78,7 +78,7 @@ const NavBar = () => {
  </nav>
  <div className='max-lg:hidden object-contain pt-8  mx-auto max-container'>
  
- {open ?(<form className='  flex w-auto gap-4 sm:border sm:border-slate-gray rounded-full  hover:bg-gray-75 p-3'>
+ {open ?(<form className=' bg-white   flex w-auto gap-4 sm:border sm:border-slate-gray rounded-full  5 p-3'>
  <input type='text' placeholder='find your shoes' className='input ' autoComplete='auto' />
  <button className='text-bold text-xl text-coral-red'>  submit </button>
  <button onClick={handleMenu}  className=' text-black cursor-pointer '>
@@ -108,7 +108,7 @@ const NavBar = () => {
                   
                          <form className=' relative'>
                              
-                            <input type='text' placeholder='search' className='input text-[#ffffff] bg-[#2d2d2d]  rounded-full p-3  gap-3 relative'autoComplete='auto' />      
+                            <input type='text' placeholder='search' className='input text-[#ffffff] bg-[#2d2d2d]  rounded-full p-3  gap-3 relative' autoComplete='auto' />      
                              <button>   <div> <FaArrowRight className='text-white absolute bottom-4 right-4 '/> </div> </button>
                              
                          </form>

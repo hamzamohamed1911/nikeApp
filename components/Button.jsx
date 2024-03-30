@@ -2,7 +2,6 @@
 import Image from 'next/image';
 import React from 'react';
 
-
 const Button = ({label,iconURL, backgroundColor,textColor,borderColor,fullWidth, handleClick}) => {
   return (
     <button
