@@ -29,7 +29,7 @@ const NavBar = () => {
         
 
       <div className='flex items-center'>
-      <NavLink href="/home">
+      <NavLink href="/">
         <Image src={headerLogo} alt='Nike LOGO'  />
         </NavLink>
       </div>

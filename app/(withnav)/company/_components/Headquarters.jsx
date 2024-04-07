@@ -30,7 +30,7 @@ const Headquarters = () => {
           src={place.imgURL}
           alt="man"
           className="aspect-square w-full h-full object-cover  "
-
+ 
           />
           <button type='button' onClick={()=> toggle(place.id)} className='absolute right-4 bottom-4  z-20' >
           <AiOutlineInfoCircle className='h-10 w-10 hover:text-gray-500 text-white '/>
