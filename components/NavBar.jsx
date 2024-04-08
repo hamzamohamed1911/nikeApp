@@ -24,14 +24,14 @@ const NavBar = () => {
   
 
   return (
-    <header className=' padding-x pt-8 pb-3  w-full max-lg:bg-black  fixed z-30' >
+    <header className=' padding-x pt-8 pb-3  w-full max-lg:bg-black max-lg:rounded-b-lg' >
       <nav className='flex justify-between items-center  content-center mx-auto max-container sm:w-screen	sm:px-0  '>
         
 
       <div className='flex items-center'>
-      <NavLink href="/">
-        <Image src={headerLogo} alt='Nike LOGO'  />
-        </NavLink>
+      <Link href="/">
+        <Image src={headerLogo} alt='Nike LOGO'  priority/>
+        </Link>
       </div>
         
      { open == false && <ul className=' flex-1 flex max-lg:hidden'>
@@ -68,7 +68,7 @@ const NavBar = () => {
      <div className=' hidden max-2xl:block ' >
          <button onClick={handleMenu} className=' text-white focus:ring-white ' >
            
-         {open ? <FaTimes className='w-7 h-7' /> : <FaBars className='w-7 h-7' />}
+         {open ? <FaTimes className='w-8 h-8' /> : <FaBars className='w-8 h-8' />}
        </button>
        
     </div>
@@ -78,11 +78,12 @@ const NavBar = () => {
  </nav>
  <div className='max-lg:hidden object-contain pt-8  mx-auto max-container'>
  
- {open ?(<form className=' bg-white   flex w-auto gap-4 sm:border sm:border-slate-gray rounded-full  5 p-3'>
- <input type='text' placeholder='find your shoes' className='input ' autoComplete='auto' />
- <button className='text-bold text-xl text-coral-red'>  submit </button>
- <button onClick={handleMenu}  className=' text-black cursor-pointer '>
- { open &&<FaTimes className='w-6 h-6' /> }
+  {open ?( 
+  <form className=' bg-white   flex w-auto gap-4 sm:border sm:border-slate-gray rounded-full  5 p-3'>
+      <input type='text' className='input ' autoComplete='auto' />
+      <button className='text-bold text-xl text-coral-red'>  submit </button>
+      <button onClick={handleMenu}  className=' text-black cursor-pointer '>
+   { open &&<FaTimes className='w-8 h-8' /> }
      </button>
      
  </form>):null}
@@ -109,7 +110,7 @@ const NavBar = () => {
                          <form className=' relative'>
                              
                             <input type='text' placeholder='search' className='input text-[#ffffff] bg-[#2d2d2d]  rounded-full p-3  gap-3 relative' autoComplete='auto' />      
-                             <button>   <div> <FaArrowRight className='text-white absolute bottom-4 right-4 '/> </div> </button>
+                             <button>   <div> <FaArrowRight className='w-7 h-7 text-white absolute bottom-4 right-4 '/> </div> </button>
                              
                          </form>
             </div>

@@ -5,10 +5,9 @@ import { Auth } from "@/lib/firebase/config";
 
 export const AuthContext =  createContext();
 
- 
 export function AuthProvider ({children}){
-    const [authUser, setAuthUser] = useState(false)
 
+    const [authUser, setAuthUser] = useState(false)
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     
 
@@ -16,10 +15,12 @@ export function AuthProvider ({children}){
 const signUp =  (email,password)=>{
     createUserWithEmailAndPassword( Auth, email,password)
 }
+
 const logIn =  (email,password)=>{
     signInWithEmailAndPassword( Auth, email,password)
     setIsLoggedIn(Auth)
 }
+
 const logOut = ()=>{
 return signOut(Auth);
 }

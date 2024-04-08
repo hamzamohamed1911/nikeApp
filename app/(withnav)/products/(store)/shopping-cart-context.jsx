@@ -13,6 +13,7 @@ const shopingCartReducer = (state,action)=>{
   
   const { allShoes} =useContext(APIContext);
 
+    
   if(action.type ==='ADD_ITEM'){
 
     const updatedItems = [...state.items];
@@ -30,8 +31,8 @@ const shopingCartReducer = (state,action)=>{
       updatedItems[existingCartItemIndex] = updatedItem;
     } else {
       const product = allShoes.find((product) => product.id === action.payload);
-      updatedItems.push({
-        id: action.payload,
+       updatedItems.push({
+        id:  action.payload,
         name: product.category,
         price: product.price,
         Image:product.image,
