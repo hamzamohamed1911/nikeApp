@@ -8,7 +8,7 @@ import { isEmail,hasMinLength ,isNotEmpty } from "@/util/validation";
 import { useAuth } from "@/store/Auth-context";
 
 export default function Login() {
-	const { setIsLoggedIn  ,logIn} =useAuth()
+	const { setIsLoggedIn , authUser,logIn} =useAuth()
 	const [error, setError] = useState('');
 	const router = useRouter();
   
@@ -60,10 +60,17 @@ export default function Login() {
 		await logIn(enteredValues.email ,enteredValues.password);
 		setIsLoggedIn(true)
 		setEnteredValues({email:'',password:''})
-		router.push('/products');
+		if (authUser) {
+			router.push('/products');
+		  }else {
+			console.log('User is not valid. Cannot navigate to products.');
+			// Handle invalid user here, maybe display an error message
+		  }
+		
 	  }catch(err){
 		setError(err.message);
 		console.log(error)
+		setIsLoggedIn(false)
 	  }
 	  
 	
