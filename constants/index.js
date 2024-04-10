@@ -5,9 +5,9 @@ import {   philb , Mark , john, thomas, Matthew, Monique, ann,  Heidi, KeJuan , 
 import {place1 } from "@/app/assets/images/nike"
 
 export const navLinks = [
-    { href: "/", label: "Home" },
-    { href: "/company", label: 'Company' },
-    { href: "/products", label:'Products' },
+    { href: "/", label: "HOME" },
+    { href: "/company", label: 'COMPANY' },
+    { href: "/products", label:'PRODUCTS' },
 
     
 ];

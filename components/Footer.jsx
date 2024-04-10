@@ -12,7 +12,7 @@ const Footer = () => {
       <div className='flex flex-col items-start'>
         <NavLink href="/home"  >
 
-          <Image alt='footerLogo' src={footerLogo} width={150} height={64} className='m-0  ' />
+          <Image alt='footerLogo' src={footerLogo} width={150} height={64} className='m-0  ' style={{ width: 'auto', height: 'auto' }}/>
         </NavLink>
         <p className='mt-6 text-base leading-7 font-montserrat text-white-400 sm:max-w-sm'>
             Get shoes ready for the new term at your nearest Nike store. Find

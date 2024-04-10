@@ -13,7 +13,8 @@ const ShoesDetails = ({isOpen,closeModal, addItem ,category ,price,image,descrip
 
   return <>
   <Transition appear show={isOpen} as={Fragment}>
-        <Dialog as="div" className="relative z-10 h-150  " onClose={closeModal}>
+        <Dialog as="div" className="relative z-10 h-150  " 
+        onClose={closeModal}>
           <Transition.Child
             as={Fragment}
             enter="ease-out duration-300"
@@ -63,15 +64,15 @@ const ShoesDetails = ({isOpen,closeModal, addItem ,category ,price,image,descrip
                   
                 <h3 className='mt-2 text-2xl leading-normal font-semibold font-palanquin'>{category}</h3>
 
-                <div class="gap-2 space-x-2">
-                  <span class="px-3 py-0.5 border border-blue-500 text-[11px] text-blue-500">Free Ship</span>
-                  <span class="px-3 py-0.5 border border-blue-500 text-[11px] text-blue-500">7 Day Return</span>
+                <div className="gap-2 space-x-2">
+                  <span className="px-3 py-0.5 border border-blue-500 text-[11px] text-blue-500">Free Ship</span>
+                  <span className="px-3 py-0.5 border border-blue-500 text-[11px] text-blue-500">7 Day Return</span>
               </div>
 
-              <p class="gap-2 space-x-2">
-                  <span class="text-2xl font-semibold text-coral-red  mt-2 font-montserrat">${price}</span>
-                  <span class="text-sm line-through text-gray-500">$1000</span>
-                  <span class="text-sm text-red-700">40% off</span>
+              <p className="gap-2 space-x-2">
+                  <span className="text-2xl font-semibold text-coral-red  mt-2 font-montserrat">${price}</span>
+                  <span className="text-sm line-through text-gray-500">$1000</span>
+                  <span className="text-sm text-red-700">40% off</span>
               </p>
             
                   <p className='font-montserrat text-xl leading-normal text-slate-gray'>{description}</p>

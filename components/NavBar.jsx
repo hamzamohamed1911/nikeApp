@@ -17,14 +17,13 @@ const NavBar = () => {
   
   const handleMenu = ()=>{
     setOpen((prev)=> !prev);
-    console.log(open)
-  
+ 
   }
   const {isLoggedIn} =useAuth()
   
 
   return (
-    <header className=' padding-x pt-8 pb-3  w-full max-lg:bg-black max-lg:rounded-b-lg' >
+    <header className='padding-x pt-8 pb-3 w-full bg-black sm:bg-transparent ' >
       <nav className='flex justify-between items-center  content-center mx-auto max-container sm:w-screen	sm:px-0  '>
         
 
@@ -34,8 +33,8 @@ const NavBar = () => {
         </Link>
       </div>
         
-     { open == false && <ul className=' flex-1 flex max-lg:hidden'>
-     <div className='flex-1 flex justify-center items-center gap-16'>
+     {!open && <ul className=' flex-1 hidden sm:px-5 sm:flex'>
+     <div className='flex-1 flex justify-center items-center sm:gap-8 xl:gap-16'>
         {navLinks.map((item)=>(  
           
             <NavLink  key={item.label} href={item.href}  >
@@ -45,12 +44,12 @@ const NavBar = () => {
         ))}
            
        {!isLoggedIn  &&<NavLink href='/login'>
-         Sign in / Explore more
+       SignIn/ Explore more
         </NavLink>}
     <div className='flex items-center'>
      <button onClick={handleMenu}  className=' text-black '>
     
-  { open == false && <CiSearch  className='w-8 h-8 text-bold' /> }
+  { !open  && <CiSearch  className='w-8 h-8 text-bold' /> }
 
      </button>
     
@@ -62,16 +61,14 @@ const NavBar = () => {
       </ul>}
 
 
-     <div className='flex  items-center justify-center'>
+  <div className='flex  items-center justify-center'>
      {isLoggedIn && <UserDropdown/> }
 
-     <div className=' hidden max-2xl:block ' >
-         <button onClick={handleMenu} className=' text-white focus:ring-white ' >
-           
-         {open ? <FaTimes className='w-8 h-8' /> : <FaBars className='w-8 h-8' />}
-       </button>
-       
-    </div>
+     <div className='sm:hidden block max-xl:block'>
+  <button onClick={handleMenu} className='text-white focus:ring-white'>
+    {open ? <FaTimes className='w-8 h-8' /> : <FaBars className='w-8 h-8' />}
+  </button>
+</div>
 </div> 
    
  
@@ -91,7 +88,7 @@ const NavBar = () => {
        
         {open ? (
           
-              <div className=' hidden p-3 space-y-1 sm:px-3 max-lg:block'>
+              <div className='sm:hidden block  p-3 space-y-1 sm:px-3'>
                   
                     {navLinks.map((item)=>(  
                           
@@ -104,7 +101,7 @@ const NavBar = () => {
 
                       ))} 
                       {!isLoggedIn  &&  <Link className='text-white hover:bg-gray-700  block px-3 py-3 rounded-md text-base font-medium ' href='/login'>
-                     Sign in / Explore more
+                     SignIn/ Explore more
                       </Link>}
                   
                          <form className=' relative'>

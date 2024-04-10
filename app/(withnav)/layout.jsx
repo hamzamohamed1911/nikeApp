@@ -1,23 +1,19 @@
-import NavBar from '@/components/NavBar';
-import Footer from '@/components/Footer';
-import ScrollToTopButton from '@/components/ScrollToTopButton';
 
+import Footer from "@/components/Footer";
+import NavBar from "@/components/NavBar";
 
-export default function RootLayout({ children }) {
+const Layout = ({ children }) => {
   return (
- <html lang="en">
-  
-  <body className="relative " >
-       
-        <NavBar/>
-        {children}
-        <ScrollToTopButton/>
-        <section className= "bg-black padding-x padding-t pb-8 ">
+    <>
+      <header>
+        <NavBar />
+      </header>
+      <main>{children}</main>
+      <section className= "bg-black padding-x padding-t pb-8 ">
         <Footer className='absolute  bottom-0'/>
-         </section>
-        </body>
-
- </html>
+      </section>
+    </>
   );
-}
+};
 
+export default Layout;
