@@ -9,7 +9,7 @@ import { useAuth } from "@/store/Auth-context";
 
 export default function Login() {
 	const { setIsLoggedIn , authUser,logIn} =useAuth()
-	const [error, setError] = useState('');
+	const [error, setError] = useState();
 	const router = useRouter();
   
 
@@ -54,25 +54,23 @@ export default function Login() {
 
 	e.preventDefault();
 
-	setError("");
+
 
     try{
 		await logIn(enteredValues.email ,enteredValues.password);
-		setIsLoggedIn(true)
-		setEnteredValues({email:'',password:''})
+		
+		
 		if (authUser) {
+			
 			router.push('/products');
-		  }else {
-			console.log('User is not valid. Cannot navigate to products.');
-			// Handle invalid user here, maybe display an error message
+			setIsLoggedIn(true)
+		    setEnteredValues({email:'',password:''})
 		  }
 		
-	  }catch(err){
-		setError(err.message);
-		console.log(error)
-		setIsLoggedIn(false)
-	  }
-	  
+	  } catch (err) {
+        setError(err.message);
+        console.log(error); // Log the error message directly here
+    }
 	
   }
     return(
@@ -90,7 +88,7 @@ export default function Login() {
 				<div>
 					<h1 className="text-2xl font-bold text-center pt-2">Login </h1>
 				</div>
-				{error && <h1 className="bg-primary text-white" > {error}</h1>}
+				{error && <h1 className="bg-primary rounded text-center text-red-500 p-6" >User is not valid. Cannot navigate to products.</h1>}
 				
 				<div className="divide-y divide-gray-200">
 					<div className="py-8 text-base leading-6 space-y-4 text-gray-700 sm:text-lg sm:leading-7">
