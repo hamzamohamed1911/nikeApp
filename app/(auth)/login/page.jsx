@@ -9,7 +9,7 @@ import { useAuth } from "@/store/Auth-context";
 
 export default function Login() {
 	const { setIsLoggedIn , authUser,logIn} =useAuth()
-	const [error, setError] = useState();
+	const [error, setError] = useState(false);
 	const router = useRouter();
   
 
@@ -29,47 +29,49 @@ export default function Login() {
      didEdit.password && !hasMinLength(enteredValues.password , 6)|| !isNotEmpty(enteredValues.password)
 	
 	
-	const handleInputChange =(identifier,value)=>{
-		setEnteredValues((prevValues)=>({
-			...prevValues,
-			[identifier]:value
+		const handleInputChange =(identifier,value)=>{
+			setEnteredValues((prevValues)=>({
+				...prevValues,
+				[identifier]:value
+			}))
+			//another chance le el user 34an yktb invalid input set it false again so that whenenver the use starts typing agian we reset this didEdit state
+			
+			setdidEdit((prevEdit)=>({ 
+				...prevEdit,
+				[identifier]:false,
+				
+
+			} 
+		))
+		setError(false);
+		}
+		const handleInputBlur =(identifier)=>{
+		setdidEdit(prevEdit=>({
+		...prevEdit,	
+		[identifier]:true
 		}))
-		//another chance le el user 34an yktb invalid input set it false again so that whenenver the use starts typing agian we reset this didEdit state
-		
-		setdidEdit((prevEdit)=>({ 
-			...prevEdit,
-			[identifier]:false,
+		setError(false);
+		}
 
-		}))
-	}
-	const handleInputBlur =(identifier)=>{
-	setdidEdit(prevEdit=>({
-	...prevEdit,	
-	[identifier]:true
-	}))
-
-	}
-
-  const handleSubmit= async(e)=>{
-
+  const handleSubmit= async(e)=>{	
 	e.preventDefault();
-
-
+	setError(false)
 
     try{
 		await logIn(enteredValues.email ,enteredValues.password);
 		
-		
 		if (authUser) {
-			
 			router.push('/products');
 			setIsLoggedIn(true)
 		    setEnteredValues({email:'',password:''})
+			setError(false)
+		  }else{
+			setError(true);			
 		  }
 		
 	  } catch (err) {
-        setError(err.message);
-        console.log(error); // Log the error message directly here
+        setError(true);
+		console.error("Error occurred during login:", err); 
     }
 	
   }
@@ -88,8 +90,7 @@ export default function Login() {
 				<div>
 					<h1 className="text-2xl font-bold text-center pt-2">Login </h1>
 				</div>
-				{error && <h1 className="bg-primary rounded text-center text-red-500 p-6" >User is not valid. Cannot navigate to products.</h1>}
-				
+			
 				<div className="divide-y divide-gray-200">
 					<div className="py-8 text-base leading-6 space-y-4 text-gray-700 sm:text-lg sm:leading-7">
 
@@ -134,6 +135,8 @@ export default function Login() {
                         <Button type="submit"  label="Login" iconURL={arrowRight }/>
                                                 
 						</div>
+						{error && <h1 className="bg-primary rounded text-center text-red-500 p-6" >User is not valid. Cannot navigate to products.</h1>}
+				
 
                         <Link href="/forgot-password" className="ms-auto text-sm font-medium text-coral-red hover:underline mt-2 ">forgot password?</Link>
 						
