@@ -1,6 +1,6 @@
 'use client'
 import { arrowRight } from "@/app/assets/icons";
-import Button from "@/components/Button";
+import Button from "@/app/_components/Button";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useAuth } from "@/store/Auth-context";

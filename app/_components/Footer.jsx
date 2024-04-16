@@ -4,9 +4,10 @@ import Image from 'next/image';
 import { footerLogo } from '@/app/assets/images';
 import { footerLinks,  socialMedia } from '@/constants'; 
 import { copyrightSign } from '@/app/assets/icons';
+import Link from 'next/link';
 const Footer = () => {
   return (
-    <footer>
+    <footer className='bg-black'>
       <div  className='max-container '>
     <div className='flex justify-between items-start gap-20 max-lg:flex-col '>
       <div className='flex flex-col items-start'>
@@ -42,7 +43,7 @@ const Footer = () => {
                     className='mt-3 font-montserrat text-base leading-normal text-white-400 hover:text-slate-gray'
                     key={link.name}
                   >
-                    <NavLink href={link.link}>{link.name}</NavLink>
+                    <Link href={link.link}>{link.name}</Link>
                   </li>
                 ))}
               </ul>

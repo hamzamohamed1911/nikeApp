@@ -1,5 +1,5 @@
 'use client'
-import Button from '@/components/Button';
+import Button from '@/app/_components/Button';
 import { AuthContext } from '@/store/Auth-context';
 import { useRouter } from 'next/navigation';
 import React, { useContext } from 'react'

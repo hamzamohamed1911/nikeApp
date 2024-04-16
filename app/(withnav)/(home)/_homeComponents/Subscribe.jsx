@@ -1,5 +1,5 @@
 'use client'
-import Button from "@/components/Button";
+import Button from "@/app/_components/Button";
 import { useRef } from "react";
 const Subscribe = () => {
   const email = useRef()

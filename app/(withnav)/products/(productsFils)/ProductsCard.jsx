@@ -6,7 +6,7 @@ import { useContext, useState } from 'react';
 import ShoesDetails from './ShoesDetails';
 import { CartContext } from '../(store)/shopping-cart-context';
 import Toasts from './Toasts';
-import Button from '@/components/Button';
+import Button from '@/app/_components/Button';
 const ProductsCard = ({id,category ,price,image ,allShoes,description }) => {
   
   let [isOpen, setIsOpen] = useState(false);

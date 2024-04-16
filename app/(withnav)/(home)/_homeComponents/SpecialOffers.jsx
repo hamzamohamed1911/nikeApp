@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { arrowRight } from '@/app/assets/icons';
 import { offer } from '@/app/assets/images';
 import { useRouter } from 'next/navigation';
-import Button from '@/components/Button';
+import Button from '@/app/_components/Button';
 
 const SpecialOffers = () => {
   const router = useRouter()

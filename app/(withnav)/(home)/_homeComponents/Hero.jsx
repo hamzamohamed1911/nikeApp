@@ -6,8 +6,8 @@ import { bigShoe1 } from '@/app/assets/images';
 import Image from 'next/image';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import Button from '@/components/Button';
-import ShoeCard from '@/components/ShoeCard';
+import Button from '@/app/_components/Button';
+import ShoeCard from '@/app/_components/ShoeCard';
 
 const Hero = () => {
   const [bigShoeImg, setBigShoeImg] = useState(bigShoe1);

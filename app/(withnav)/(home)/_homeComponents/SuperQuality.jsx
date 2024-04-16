@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from 'next/image';
 import { shoe8 } from '@/app/assets/images';
-import Button from '@/components/Button';
+import Button from '@/app/_components/Button';
 
 const SuperQuality = () => {
   return (

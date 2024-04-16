@@ -1,7 +1,7 @@
 "use client"
 import { useState } from 'react';
 import { CiSearch } from 'react-icons/ci';
-import Button from '@/components/Button';
+import Button from '@/app/_components/Button';
 import CartModal from './CartModal';
 import { CartContext } from '../(store)/shopping-cart-context'; 
 import { useContext } from 'react';

@@ -7,7 +7,7 @@ import { arrowRight, closeIcon } from '@/app/assets/icons';
 import Cart from './Cart';
 import { useRouter } from 'next/navigation';
 import { CartContext } from '../(store)/shopping-cart-context';
-import Button from '@/components/Button';
+import Button from '@/app/_components/Button';
 
 const CartModal = ({isOpen,closeModal }) => {
   const {items} =useContext(CartContext);

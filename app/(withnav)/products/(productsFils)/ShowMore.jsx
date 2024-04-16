@@ -1,6 +1,6 @@
 
 import { arrowRight } from '@/app/assets/icons';
-import Button from '@/components/Button';
+import Button from '@/app/_components/Button';
 
 
 const ShowMore = ({pageNumber,isNext ,setLimit}) => {

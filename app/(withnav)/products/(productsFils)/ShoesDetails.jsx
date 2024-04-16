@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { Dialog,Transition } from '@headlessui/react';
 import { closeIcon } from '@/app/assets/icons';
 import Link from 'next/link';
-import Button from '@/components/Button';
+import Button from '@/app/_components/Button';
 
 
 const ShoesDetails = ({isOpen,closeModal, addItem ,category ,price,image,description  ,id}) => {

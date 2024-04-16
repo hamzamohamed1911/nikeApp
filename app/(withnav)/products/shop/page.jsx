@@ -2,7 +2,7 @@
 import React, { useContext } from 'react'
 import { CartContext } from '../(store)/shopping-cart-context';
 import { FaMinus, FaPlus } from 'react-icons/fa';
-import Button from '@/components/Button';
+import Button from '@/app/_components/Button';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import { GiEgypt } from "react-icons/gi";
