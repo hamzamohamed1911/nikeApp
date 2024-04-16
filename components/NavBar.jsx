@@ -104,12 +104,12 @@ const NavBar = () => {
                      SignIn/ Explore more
                       </Link>}
                   
-                         <form className=' relative'>
-                             
-                            <input type='text' placeholder='search' className='input text-[#ffffff] bg-[#2d2d2d]  rounded-full p-3  gap-3 relative' autoComplete='auto' />      
-                             <button>   <div> <FaArrowRight className='w-7 h-7 text-white absolute bottom-4 right-4 '/> </div> </button>
-                             
-                         </form>
+                      <form className='relative'>
+    <div className='relative'>
+        <input type='text' placeholder='search' className='input text-[#ffffff] bg-[#2d2d2d] rounded-full p-3 pr-10' autoComplete='auto' />
+       <button> <FaArrowRight className='w-7 h-7 text-white absolute top-0 right-1 bottom-0 m-auto' /> </button>
+    </div>
+</form>
             </div>
 
       ):null}    
