@@ -18,7 +18,7 @@ const Company = () => {
         </span>
     </h1>
 
-  <div className= 'lg:text-8xl sm:text-4xl  md:text-4xl'>
+  <div className= 'lg:text-8xl text-4xl  md:text-4xl'>
      
      <h1>
         <span className=' relative z-10 pr-10 bold inline-block mt-3'>
