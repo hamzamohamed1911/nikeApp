@@ -1,3 +1,4 @@
+import ScrollToTopButton from "@/components/ScrollToTopButton";
 import "./globals.css";
 import APIContextProvider from "@/store/api-context";
 import { AuthProvider } from "@/store/Auth-context";
@@ -15,6 +16,7 @@ export default function RootLayout({ children }) {
        <APIContextProvider>
         <AuthProvider>
         {children}
+        <ScrollToTopButton/>
          </AuthProvider>
          </APIContextProvider>
         </body>
