@@ -7,7 +7,6 @@ import ShowMore from './(productsFils)/ShowMore';
 import { loaderIcon } from '@/app/assets/icons';
 import { APIContext } from '@/store/api-context';
 
-
 const Products = () => {
   const { fetchShoes ,allShoes} =useContext(APIContext);
   const [isLoading, setIsLoading] = useState(false);
