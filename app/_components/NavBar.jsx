@@ -49,7 +49,7 @@ const NavBar = () => {
     <div className='flex items-center'>
      <button onClick={handleMenu}  className=' text-black '>
     
-  { !open  && <CiSearch  className='w-8 h-8 text-bold' /> }
+  {/* { !open  && <CiSearch  className='w-8 h-8 text-bold' /> } */}
 
      </button>
     
@@ -75,7 +75,7 @@ const NavBar = () => {
  </nav>
  <div className='max-lg:hidden object-contain pt-8  mx-auto max-container'>
  
-  {open ?( 
+  {/* {open ?( 
   <form className=' bg-white   flex w-auto gap-4 sm:border sm:border-slate-gray rounded-full  5 p-3'>
       <input type='text' className='input ' autoComplete='auto' />
       <button className='text-bold text-xl text-coral-red'>  submit </button>
@@ -83,7 +83,7 @@ const NavBar = () => {
    { open &&<FaTimes className='w-8 h-8' /> }
      </button>
      
- </form>):null}
+ </form>):null} */}
 </div>
        
         {open ? (
