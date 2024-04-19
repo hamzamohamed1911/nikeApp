@@ -92,7 +92,7 @@ const Company = () => {
    <h1 className='text-8xl font-bold'>
     43%
     </h1>
-    <p>
+    <p  className='text-lg'>
     of NIKE’s leadership positions are held by women.
     </p>
    </div>
@@ -102,7 +102,7 @@ const Company = () => {
    <h1 className='text-8xl font-bold'>
    78%
     </h1>
-    <p>
+    <p className='text-lg'>
     renewable energy in owned or operated facilities, up from 48% in FY20.
     </p>
    </div>
@@ -112,7 +112,7 @@ const Company = () => {
    <h1 className='text-8xl font-bold'>
    $97.7M
     </h1>
-    <p>
+    <p  className='text-lg'>
     invested in NIKE, Inc.'s fiscal year 2021 to drive positive impact in communities around the world.
     </p>
    </div>

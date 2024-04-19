@@ -69,11 +69,11 @@ export default function Login() {
   }
 
   return (
-    <form onSubmit={handleSubmit}> {/* Attach handleSubmit to form's onSubmit event */}
+    <form onSubmit={handleSubmit}> 
       <div className="padding p-10 flex flex-1 justify-center items-center">
         <div className="min-h-screen py-6 flex flex-col justify-center">
           <div className="relative py-3 sm:max-w-xl sm:mx-auto ">
-            <div className="relative px-4 py-10 bg-slate-50 shadow-lg rounded-3xl sm:p-20">
+            <div className="relative px-4 py-10 bg-primary shadow-lg rounded-3xl sm:p-20">
               <div className="max-w-md  ">
                 <h1 className='mt-10 font-montserrat text-xl font-bold text-coral-red '>
                   Nike helps you choose comfortable shoes
@@ -88,14 +88,14 @@ export default function Login() {
                         id="email"
                         name="email"
                         type="text"
-                        className="peer bg-slate-50 placeholder-transparent h-10 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:borer-rose-600"
+                        className="peer bg-primary placeholder-transparent h-10 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:borer-rose-600"
                         placeholder="Email address"
                         onBlur={() => handleInputBlur('email')}
                         onChange={(e) => handleInputChange('email', e.target.value)}
                         value={enteredValues.email}
                         autoComplete="email"
                       />
-                      <label htmlFor="email" className="absolute left-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm">Email Address</label>
+                      <label htmlFor="email" className="absolute left-0 -top-3.5 text-black text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm">Email Address</label>
                       <div className="text-coral-red">
                         {emailIsInvalid && (<p>email is invalid </p>)}
                       </div>
@@ -105,14 +105,14 @@ export default function Login() {
                         id="password"
                         name="password"
                         type="password"
-                        className="peer bg-slate-50 placeholder-transparent h-10 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:borer-rose-600"
+                        className="peer bg-primary placeholder-transparent h-10 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:borer-rose-600"
                         placeholder="Password"
                         onBlur={() => handleInputBlur('password')}
                         onChange={(e) => handleInputChange('password', e.target.value)}
                         value={enteredValues.password}
                         autoComplete="new-password"
                       />
-                      <label htmlFor="password" className="absolute left-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm">Password</label>
+                      <label htmlFor="password" className="absolute left-0 -top-3.5 text-black text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm">Password</label>
                       <div className="text-coral-red">
                         {PasswordIsInvalid && (<p>password is invalid </p>)}
                       </div>

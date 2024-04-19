@@ -1,4 +1,4 @@
 const layout = ({children})=>{
-    return(<div className="bg-primary"> {children} </div>)
+    return(<div > {children} </div>)
 }
 export default layout;

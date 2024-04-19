@@ -3,7 +3,7 @@ import { loaderIcon } from "../assets/icons";
 
 export default function Loading() {
     return (
-      <main className="h-screen bg-primary flex items-center justify-center">
+      <main className="h-screen  flex items-center justify-center">
 
           <Image
             src={loaderIcon}

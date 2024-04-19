@@ -24,7 +24,7 @@ const NavBar = () => {
 
   return (
     <header className='padding-x pt-8  pb-3 w-full bg-black sm:bg-transparent ' >
-      <nav className='flex justify-between items-center  content-center mx-auto sm:max-container sm:w-screen	sm:px-0  '>
+      <nav className='flex justify-between items-center  content-center mx-auto sm:max-container sm:w-screen	sm:px-0 '>
         
 
       <div className='flex items-center'>
