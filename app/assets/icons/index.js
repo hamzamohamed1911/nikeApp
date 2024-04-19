@@ -31,5 +31,7 @@ export {
     searchIcon,
     scrollUpIcon,
     closeIcon,
-    loaderIcon
+    loaderIcon,
+    
+    
 }

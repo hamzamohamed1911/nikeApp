@@ -11,7 +11,6 @@ export function AuthProvider ({children}){
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     
 
-
 const signUp =  (email,password)=>{
     createUserWithEmailAndPassword( Auth, email,password)
 }
