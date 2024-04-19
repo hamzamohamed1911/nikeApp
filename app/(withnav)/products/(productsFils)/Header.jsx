@@ -10,8 +10,6 @@ const Header = ({ setQuery, query }) => {
   const { items } = useContext(CartContext);
   const [isOpen, setIsOpen] = useState(false);
  
-
-
   let cartQuantity = items.length;
 
   const handleSearchChange = (e) => {
@@ -34,7 +32,6 @@ const Header = ({ setQuery, query }) => {
             <CiSearch className='h-7 w-7' />
           </button>
         </form>
-
         <p className='flex items-center justify-end'>
       
 
