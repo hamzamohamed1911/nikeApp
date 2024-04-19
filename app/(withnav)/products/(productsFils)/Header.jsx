@@ -1,7 +1,6 @@
 "use client"
 import { useState } from 'react';
 import { CiSearch } from 'react-icons/ci';
-import Button from '@/app/_components/Button';
 import CartModal from './CartModal';
 import { CartContext } from '../(store)/shopping-cart-context'; 
 import { useContext } from 'react';
@@ -26,7 +25,7 @@ const Header = () => {
   return (
     <>
       <header className='flex justify-between pt-8' >
-        <form className='bg-white flex items-center w-auto sm:border sm:border-slate-gray rounded-full relative sm:p-3 lg:p-3 md:p-3 shadow-md'>
+        <form className='bg-white flex items-center w-auto border border-slate-gray rounded-full relative p-3  shadow-md'>
           <input
             type='text'
             placeholder='Find your shoes'
@@ -56,7 +55,6 @@ const Header = () => {
   
 </button>
 
-          
         </p>
       </header>
       <CartModal isOpen={isOpen} closeModal={() => setIsOpen(false)} />
