@@ -5,36 +5,32 @@ import CartModal from './CartModal';
 import { CartContext } from '../(store)/shopping-cart-context'; 
 import { useContext } from 'react';
 
-const Header = () => {
+{/*{query ,setQuery} */}
+const Header = ({ setQuery, query }) => {
   const { items } = useContext(CartContext);
   const [isOpen, setIsOpen] = useState(false);
+ 
 
-  const [searchTerm, setSearchTerm] = useState('');
-
-  
-  const handleSearch = (e) => {
-    e.preventDefault();
-    
-    console.log('Search term:', searchTerm);
-   
-    setSearchTerm('');
-  };
 
   let cartQuantity = items.length;
+
+  const handleSearchChange = (e) => {
+  setQuery(e.target.value);
+  };
 
   return (
     <>
       <header className='flex justify-between pt-8' >
-        <form className='bg-white flex items-center w-auto sm:border sm:border-slate-gray rounded-full relative p-4 sm:p-3 lg:p-3 md:p-3 shadow-md'>
+        <form  className='bg-slate-50 flex items-center w-auto sm:border sm:border-slate-gray rounded-full relative sm:p-3 lg:p-3 md:p-3 shadow-md'>
           <input
             type='text'
             placeholder='Find your shoes'
-            className='input'
+            className='input bg-slate-50'
             autoComplete='auto'
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
+            value={query}
+            onChange={handleSearchChange}
           />
-          <button className='absolute right-5' onClick={handleSearch}>
+          <button type="submit" className='absolute right-5' >
             <CiSearch className='h-7 w-7' />
           </button>
         </form>
@@ -43,7 +39,7 @@ const Header = () => {
       
 
 
-<button onClick={() => setIsOpen(true)}>
+<button  onClick={() => setIsOpen(true)}>
 <div className="relative py-2">
   <div className="t-0 absolute left-6">
     <p className="flex h-5 w-5 items-center justify-center rounded-full bg-red-500 p-4 text-xs text-white">{cartQuantity}</p>

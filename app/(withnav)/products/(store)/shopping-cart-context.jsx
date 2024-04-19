@@ -12,15 +12,11 @@ updateItemQuantity:()=>{},
 
 export default function CartContextProvider({children}){
   const { allShoes} =useContext(APIContext);
+{/* The reducer function takes the current state and an action as arguments, and returns the new state based on the action type. */}
   const shopingCartReducer = (state,action)=>{
-  
-   
-  
-      
+
     if(action.type ==='ADD_ITEM'){
-  
       const updatedItems = [...state.items];
-      
       const existingCartItemIndex = updatedItems.findIndex(
         (cartItem) => cartItem.id === action.payload,
       );
@@ -82,7 +78,7 @@ export default function CartContextProvider({children}){
   }
 
 
-  
+  {/*The useReducer hook takes in a reducer function and an initial state, and returns the current state and a dispatch function.  */}
   const [shonpigCardState,shopingCardDispatch] = useReducer(shopingCartReducer ,{
     items: [],
   })
@@ -91,8 +87,7 @@ export default function CartContextProvider({children}){
         shopingCardDispatch({
           type:'ADD_ITEM',
           payload:id
-        })
-      ;
+        }) ;
       }
       function handleUpdateCartItemQuantity(productId, amount) {
       shopingCardDispatch({
