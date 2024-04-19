@@ -9,10 +9,6 @@ export default function APIContextProvider({children}){
       const fetchShoes = async({ limit})=>{
     
         const url = `https://fakestoreapi.com/products?limit=${limit}`;
-      // const  headers= {
-      //   'X-RapidAPI-Key': '6abf973a9cmsh3e2586939a274bbp127c26jsn8b70682c013e',
-      //   'X-RapidAPI-Host': 'shoes-collections.p.rapidapi.com'
-      //   }
         const response  =await fetch(url);
         const data = await response.json();
         setAllShoes(data)

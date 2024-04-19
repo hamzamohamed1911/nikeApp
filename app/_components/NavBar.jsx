@@ -6,7 +6,7 @@ import {  headerLogo } from '@/app/assets/images';
 import NavLink from './nav-link';
 import { useState } from 'react';
 import { FaTimes,FaBars ,FaArrowRight   } from "react-icons/fa";
-import { CiSearch } from "react-icons/ci";
+// import { CiSearch } from "react-icons/ci";
 import Link from 'next/link';
 import { useAuth } from '@/store/Auth-context';
 import UserDropdown from './UserDropdown';
@@ -23,8 +23,8 @@ const NavBar = () => {
   
 
   return (
-    <header className='padding-x pt-8 pb-3 w-full bg-black sm:bg-transparent ' >
-      <nav className='flex justify-between items-center  content-center mx-auto max-container sm:w-screen	sm:px-0  '>
+    <header className='padding-x pt-8  pb-3 w-full bg-black sm:bg-transparent ' >
+      <nav className='flex justify-between items-center  content-center mx-auto sm:max-container sm:w-screen	sm:px-0  '>
         
 
       <div className='flex items-center'>

@@ -61,9 +61,8 @@ return (
    </section>
 
    ):(
-   <div className='mt-16 flex justify-center items-center flex-col gap-2'>
+   <div className='h-screen flex justify-center items-center flex-col gap-2'>
    <h2 className='text-black text-xl font-bold'>oops , no results </h2>
-   <p>{allShoes}</p>
    </div>)}
 
     </div>

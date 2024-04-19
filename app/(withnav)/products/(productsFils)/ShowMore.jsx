@@ -1,7 +1,5 @@
-
 import { arrowRight } from '@/app/assets/icons';
 import Button from '@/app/_components/Button';
-
 
 const ShowMore = ({pageNumber,isNext ,setLimit}) => {
     const handleNavigation = ()=>{
