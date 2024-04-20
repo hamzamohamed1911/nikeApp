@@ -10,6 +10,8 @@ import { FaTimes,FaBars ,FaArrowRight   } from "react-icons/fa";
 import Link from 'next/link';
 import { useAuth } from '@/store/Auth-context';
 import UserDropdown from './UserDropdown';
+import { motion, AnimatePresence } from 'framer-motion';
+
 
 
 const NavBar = () => {
@@ -85,35 +87,65 @@ const NavBar = () => {
      
  </form>):null} */}
 </div>
-       
-        {open ? (
-          
-              <div className='sm:hidden block  p-3 space-y-1 sm:px-3'>
-                  
-                    {navLinks.map((item)=>(  
-                          
-                              <Link
-                              key={item.label} 
-                              href={item.href} 
-                              className='text-white hover:bg-gray-700  block px-3 py-3 rounded-md text-base font-medium '>
-                              {item.label}
-                              </Link>
+       {/* menu nav */}
+    
 
-                      ))} 
-                      {!isLoggedIn  &&  <Link className='text-white hover:bg-gray-700  block px-3 py-3 rounded-md text-base font-medium ' href='/login'>
-                     SignIn/ Explore more
-                      </Link>}
-                  
-                      <form className='relative'>
-    <div className='relative'>
-        <input type='text' placeholder='search' className='input text-[#ffffff] bg-[#2d2d2d] rounded-full p-3 pr-10' autoComplete='auto' />
-       <button> <FaArrowRight className='w-7 h-7 text-white absolute top-0 right-1 bottom-0 m-auto' /> </button>
-    </div>
-</form>
-            </div>
-
-      ):null}    
-
+<AnimatePresence>
+  {open && (
+    <motion.div
+      className='sm:hidden block p-3 space-y-1 sm:px-3'
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -20 }}
+      transition={{ duration: 0.3 }}
+    >
+      {navLinks.map((item, index) => (
+        <motion.div
+          key={item.label}
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0, transition: { delay: index * 0.1 } }}
+        >
+          <Link
+            href={item.href}
+            className='text-white hover:bg-gray-700 block px-3 py-3 rounded-md text-base font-medium'
+          >
+            {item.label}
+          </Link>
+        </motion.div>
+      ))}
+      {!isLoggedIn && (
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0, transition: { delay: navLinks.length * 0.1 } }}
+        >
+          <Link
+            className='text-white hover:bg-gray-700 block px-3 py-3 rounded-md text-base font-medium'
+            href='/login'
+          >
+            SignIn/ Explore more
+          </Link>
+        </motion.div>
+      )}
+      <motion.form
+        className='relative'
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0, transition: { delay: (navLinks.length + 1) * 0.1 } }}
+      >
+        <div className='relative'>
+          <input
+            type='text'
+            placeholder='search'
+            className='input text-[#ffffff] bg-[#2d2d2d] rounded-full p-3 pr-10'
+            autoComplete='auto'
+          />
+          <button>
+            <FaArrowRight className='w-7 h-7 text-white absolute top-0 right-1 bottom-0 m-auto' />
+          </button>
+        </div>
+      </motion.form>
+    </motion.div>
+  )}
+</AnimatePresence>
 </header>
 
   )
