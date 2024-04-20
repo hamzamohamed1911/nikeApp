@@ -59,8 +59,7 @@ return (
       {isLoading ? (
               <div className='mt-10  flex  '>
               <p >
-                 <Image className='animate-spin h-6 w-6 mr-3' src={loaderIcon} alt='loaderIcon' />
-                Loading <span className="animate-ping"> . </span>  <span className="animate-ping"> . </span> <span className="animate-ping"> . </span>
+                 <Image className='animate-spin h-10 w-10 ' src={loaderIcon} alt='loaderIcon' />
                 </p>
               </div>
       ): <ShowMore 
