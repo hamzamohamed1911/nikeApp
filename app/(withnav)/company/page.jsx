@@ -12,7 +12,7 @@ const Company = () => {
 <div  className='flex justify-center  items-center padding bg-primary'>
 
 <div className='font-palanquin font-bold'>
-    <h1 className='text-2xl flex justify-center  '>
+    <h1 className='md:text-2xl text-xl flex justify-center  '>
         <span>
         Company
         </span>
@@ -36,11 +36,11 @@ const Company = () => {
     </div>
 
 
-    <div className='bg-white font-palanquin sm:text-xl md:text-2xl lg:text-4xl padding'> 
+    <div className='bg-white font-palanquin text-md md:text-2xl lg:text-4xl padding text-bold'> 
 
-   <h1 className='flex justify-center items-center'>
+   <h1 className='flex justify-center items-center '>
    <span>
-   <span className='text-coral-red  '>Nike ,  </span>  Inc. is a team comprised of the  <span className='text-coral-red  '>Nike ,  </span>  Jordan and
+   <span className='text-coral-red   '>Nike ,  </span>  Inc. is a team comprised of the  <span className='text-coral-red  '>Nike ,  </span>  Jordan and
     </span>
    </h1>
 

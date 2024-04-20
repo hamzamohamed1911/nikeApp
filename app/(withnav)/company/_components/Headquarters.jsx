@@ -3,6 +3,7 @@ import { headquarters } from '@/constants';
 import Image from 'next/image'
 import React, { useState } from 'react';
 import { AiOutlineInfoCircle } from "react-icons/ai";
+import { motion } from 'framer-motion';
 
 
 const Headquarters = () => {
@@ -10,6 +11,7 @@ const Headquarters = () => {
 
   const toggle = (id) => {
     setOpen({
+      ...open,
       [id]: !open[id],
     });
   };
@@ -22,8 +24,8 @@ const Headquarters = () => {
  
    <div className="grid grid-cols-1 gap-4 lg:grid-cols-2 lg:gap-8">
         {headquarters.map((place )=>(
-          <div  className="group block pb-28 " key={place.id}>
-          <div className='relative'>
+          <div  className="group block pb-28  " key={place.id}>
+          <div className='relative overflow-hidden'>
           <Image
           width={0}
           height={0}
@@ -32,16 +34,20 @@ const Headquarters = () => {
           className="aspect-square w-full h-full object-cover  "
  
           />
-          <button type='button' onClick={()=> toggle(place.id)} className='absolute right-4 bottom-4  z-20' >
+              <button type='button' onClick={() => toggle(place.id)} className='absolute right-4 bottom-4 z-20'>
           <AiOutlineInfoCircle className='h-10 w-10 hover:text-gray-500 text-white '/>
           </button>
-          
-     {open[place.id] && <div className='p-6 absolute bottom-0 right-0 left-0 bg-black' >
-          <p className='text-white' >
-           {place.Description}
-          </p>
-           </div>}
-
+          {open[place.id] && (
+                <motion.div
+                  initial={{ y: 120 }}
+                  animate={{ y: 0 }}
+                  exit={{ y: 120 }}  
+                  transition={{ type: 'spring', damping: 20, stiffness: 100 }}
+                  className='p-6 absolute bottom-0 right-0 left-0 bg-black'
+                >
+                  <p className='text-white'>{place.Description}</p>
+                </motion.div>
+              )}
           </div>
 
           <div className="mt-4 ">
