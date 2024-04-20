@@ -13,10 +13,6 @@ const Products = () => {
   const [limit, setLimit] = useState(10);
   const [query, setQuery] = useState('');
 
-  // const filteredShoes = allShoes.filter((shoe) => (
-  //    shoe.name.toLowerCase().includes(query.toLowerCase())
-  // ));
-
     const getShoes = async ()=>{
       setIsLoading(true);
       try {
