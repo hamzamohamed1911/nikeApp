@@ -241,3 +241,17 @@ export const headquarters = [
     
     
 ];
+export const CONTACTUS = [
+    {id:1 ,title:"Headquarters" ,content:" One Bowerman Drive  Beaverton, OR 97005Phone: 1-503-671-6453  7:30 a.m. - 5:30 p.m. PT, Monday - Friday (except holidays)." , },
+    {id:2 ,title:"Consumer Affairs",content:" Search the Help section to find what you need. " , },
+    {id:3 ,title:"Student Inquiries",content:"  Thank you for your interest in Nike. Due to a high volume of student inquiries, we are unable to respond to individual requests for information. To help address questions about the company, we publish news stories on a daily basis and routinely update company material in our Newsroom and FAQ sections.For financial information please refer to the Financial Reports and SEC filings and quarterly earnings information available on the Investors site. Please note that due to the volume of requests and in effort to reduce our environmental impact, we are no longer sending printed copies of our NIKE, Inc. annual reports to students. Students interested in reading our annual report can find it online, along with other financial and company information, by visiting the Investors website. For information regarding our corporate responsibility efforts, visit the Impact section. Learn about Nike's giving and community programs in the Empowering Communities section. For questions regarding Nike's internship programs please visit the Internships page of the Careers section. To request a hard copy of our latest Annual report, please call 800-640-8007 or write to NIKE’s Investor Relations Department at Investor.Relations@nike.com. Annual reports prior to the current year are only available Online." },
+    {id:4 ,title:"Media Requests" ,content:" For high-resolution, downloadable logos and images for media usage, please visit our Media Assets page. Nike Brand and NIKE, Inc. U.S. and global 1-212-367-4447 or media.relations@nike.comU.K. and Europe media.europe@nike.com Africa  media.africa@nike.com These lines are answered during business hours and are also checked frequently for messages.  Converse Communications@Converse.com" , },
+    {id:5 ,title:"Investor Relations",content:"Other Shareholder Assistance Communications concerning shareholder address changes, stock transfers, changes of ownership, lost stock certificates, payment of dividends, dividend cheque replacements, duplicate mailings or other account services should be directed to the Compa" , },
+]
+
+
+
+
+
+
+
