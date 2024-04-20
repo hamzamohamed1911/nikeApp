@@ -14,7 +14,7 @@ const ShowMore = ({pageNumber,isNext ,setLimit}) => {
         iconURL={arrowRight}
         handleClick={handleNavigation}
         />
-              )}
+         )}
     </div>
   )
 }

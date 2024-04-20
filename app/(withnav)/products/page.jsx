@@ -9,7 +9,7 @@ import { APIContext } from '@/store/api-context';
 
 const Products = () => {
   const { fetchShoes ,allShoes} =useContext(APIContext);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const [limit, setLimit] = useState(10);
   const [query, setQuery] = useState('');
 
@@ -32,7 +32,8 @@ const Products = () => {
           useEffect(()=>{ getShoes()}, [limit])
 
 return (
-  <div  className='padding'>
+<>
+<div  className='padding'>
    {allShoes.length>0 ? (
 
    <section id="products" className="max-container gap-10 max-sm:mt-12">
@@ -48,27 +49,27 @@ return (
      {allShoes.length > 0 && (
             <div className="mt-16 grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-2 grid-cols-1 sm:gap-6 gap-14    ">
               {allShoes
-                .filter((shoe) => shoe.category.toLowerCase().includes(query.toLowerCase())) // Filter based on query
+                .filter((shoe) => shoe.category.toLowerCase().includes(query.toLowerCase())) 
                 .map((product, id) => (
                   <ProductsCard {...product} key={id} />
                 ))}
             </div>
           )}
       
-      {isLoading && (
+      {isLoading ? (
               <div className='mt-10  flex  '>
               <p >
                  <Image className='animate-spin h-6 w-6 mr-3' src={loaderIcon} alt='loaderIcon' />
                 Loading <span className="animate-ping"> . </span>  <span className="animate-ping"> . </span> <span className="animate-ping"> . </span>
                 </p>
               </div>
-      )}
-
-      <ShowMore 
+      ): <ShowMore 
       pageNumber={limit /5}
       isNext ={limit> allShoes.length}
       setLimit={setLimit}
-      />
+      />}
+
+     
    </section>
 
    ):(
@@ -76,7 +77,8 @@ return (
    <h2 className='text-black text-xl font-bold'>oops , no results </h2>
    </div>)}
 
-    </div>
+  </div>
+ </>
     
   )
   

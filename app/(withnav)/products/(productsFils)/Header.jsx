@@ -19,7 +19,7 @@ const Header = ({ setQuery, query }) => {
   return (
     <>
       <header className='flex justify-between pt-8' >
-        <form  className='bg-slate-50 flex items-center w-auto sm:border sm:border-slate-gray rounded-full relative sm:p-3 lg:p-3 md:p-3 shadow-md'>
+        <form  className='bg-slate-50 flex items-center w-auto sm:border sm:border-slate-gray rounded-full relative p-1  shadow-md'>
           <input
             type='text'
             placeholder='Find your shoes'
