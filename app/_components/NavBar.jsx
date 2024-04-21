@@ -1,11 +1,10 @@
 'use client'
 import Image from 'next/image';
 import { navLinks } from '@/constants';
-import React from 'react';
-import {  headerLogo } from '@/app/assets/images';
+import React, { useState, useEffect } from 'react';
+import { headerLogo } from '@/app/assets/images';
 import NavLink from './nav-link';
-import { useState } from 'react';
-import { FaTimes,FaBars ,FaArrowRight   } from "react-icons/fa";
+import { FaTimes, FaBars, FaArrowRight } from "react-icons/fa";
 import Link from 'next/link';
 import { useAuth } from '@/store/Auth-context';
 import UserDropdown from './UserDropdown';
@@ -13,36 +12,49 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const NavBar = () => {
   const [open, setOpen] = useState(false);
-  const {isLoggedIn} =useAuth()
-  
-  const handleMenu = ()=>{
-    setOpen((prev)=> !prev);
+  const [scrolled, setScrolled] = useState(false);
+  const { isLoggedIn } = useAuth();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      setScrolled(scrollTop > 0);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  const handleMenu = () => {
+    setOpen(prev => !prev);
   }
 
   return (
-    <header className="padding-x pt-8  pb-3 w-full bg-black sm:bg-transparent ">
-      <nav className="flex justify-between items-center  content-center mx-auto sm:max-container sm:w-screen	sm:px-0 ">
+    <header className={`padding-x pt-8 pb-3 w-full ${scrolled ? 'bg-black' : ''} ${scrolled ? 'fixed top-0 left-0 z-50' : 'bg-black'} sm:bg-transparent`}>
+      <nav className="flex justify-between items-center content-center mx-auto sm:max-container sm:w-screen sm:px-0 ">
         <div className="flex items-center">
           <Link href="/">
             <Image src={headerLogo} alt="Nike LOGO" priority />
           </Link>
         </div>
-                {/* navbar ul */}
-          <ul className=" flex-1 hidden sm:px-5 sm:flex">
-            <div className="flex-1 flex justify-center items-center sm:gap-8 xl:gap-16">
-              {navLinks.map((item) => (
-                <NavLink key={item.label} href={item.href}>
-                  {item.label}
-                </NavLink>
-              ))}
+        {/* navbar ul */}
+        <ul className="flex-1 hidden sm:px-5 sm:flex">
+          <div className="flex-1 flex justify-center items-center sm:gap-8 xl:gap-16">
+            {navLinks.map((item) => (
+              <NavLink key={item.label} href={item.href}>
+                {item.label}
+              </NavLink>
+            ))}
 
-              {!isLoggedIn && (
-                <NavLink href="/login">SignIn/ Explore more</NavLink>
-              )}
-            </div>
-          </ul>
+            {!isLoggedIn && (
+              <NavLink href="/login">SignIn/ Explore more</NavLink>
+            )}
+          </div>
+        </ul>
 
-        <div className="flex  items-center justify-center">
+        <div className="flex items-center justify-center">
           {isLoggedIn && <UserDropdown />}
 
           <div className="sm:hidden block max-xl:block">
@@ -60,7 +72,7 @@ const NavBar = () => {
         </div>
 
       </nav>
-  
+
       {/* menu nav */}
       <AnimatePresence>
         {open && (
