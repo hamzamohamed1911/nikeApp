@@ -3,7 +3,9 @@ import Footer from "@/app/_components/Footer";
 import NavBar from "@/app/_components/NavBar";
 import ScrollToTopButton from "@/app/_components/ScrollToTopButton";
 import { useEffect, useState } from "react";
-import Loading from "../loading";
+import Loader from "../_components/loading";
+
+
 
 const Layout = ({ children }) => {
   const [loading, setLoading] = useState(true);
@@ -18,7 +20,7 @@ const Layout = ({ children }) => {
   return (
     <>
       {loading ? (
-        <Loading />
+        <Loader />
       ) : (
         <>
           <header>
