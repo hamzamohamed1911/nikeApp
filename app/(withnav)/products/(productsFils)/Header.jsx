@@ -23,7 +23,7 @@ const Header = ({ setQuery, query }) => {
   <input
     type="text"
     placeholder="Find your shoes"
-    className="input bg-transparent placeholder-gray-600 px-4 py-2 focus:outline-none  focus:border-transparent flex-grow"
+    className="input bg-transparent placeholder-gray-600 px-4 py-2 outline-none  border-transparent flex-grow"
     autoComplete="auto"
     value={query}
     onChange={handleSearchChange}
