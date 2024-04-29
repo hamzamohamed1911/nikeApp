@@ -43,7 +43,7 @@ return (
 <Header setQuery={setQuery} query={query} />
 
      {allShoes.length > 0 && (
-            <div className="mt-16 grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-2 grid-cols-1 sm:gap-6 gap-14    ">
+            <div className="mt-16 grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-2 grid-cols-1 sm:gap-6 gap-14 ">
               {allShoes
                 .filter((shoe) => shoe.category.toLowerCase().includes(query.toLowerCase())) 
                 .map((product, id) => (
@@ -67,10 +67,13 @@ return (
      
    </section>
 
-   ):(
+   ):(isLoading? <p >
+    <Image className='animate-spin h-10 w-10 flex justify-center items-center ' src={loaderIcon} alt='loaderIcon' />
+   </p>:
    <div className='h-screen flex justify-center items-center flex-col gap-2'>
    <h2 className='text-black text-xl font-bold'>oops , no results </h2>
-   </div>)}
+   </div>
+   )}
 
   </div>
  </>

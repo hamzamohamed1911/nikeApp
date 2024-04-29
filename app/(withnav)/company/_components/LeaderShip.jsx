@@ -7,7 +7,7 @@ import LeaderDetail from './LeaderDetail';
 
 const LeaderShip = () => {
   const [selectedLeader, setSelectedLeader] = useState(null);
-
+  
   const openLeaderDetail = (leader) => {
     setSelectedLeader(leader);
   };
