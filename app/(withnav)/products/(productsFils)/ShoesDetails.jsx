@@ -1,19 +1,21 @@
 'use client'
 
-import { Fragment } from 'react';
+import { Fragment, useContext } from 'react';
 import Image from 'next/image';
 import { Dialog,Transition } from '@headlessui/react';
 import { closeIcon } from '@/app/assets/icons';
 import Link from 'next/link';
 import Button from '@/app/_components/Button';
+import { CartContext } from '../(store)/shopping-cart-context';
 
 
-const ShoesDetails = ({isOpen,closeModal, addItem ,category ,price,image,description  ,id}) => {
- 
+const ShoesDetails = ({isOpen,closeModal ,category ,price,image,description  ,id}) => {
+  const { addItemToCart} =useContext(CartContext);
+
 
   return <>
   <Transition appear show={isOpen} as={Fragment}>
-        <Dialog as="div" className="relative z-10 h-150  " 
+        <Dialog as="div" className="relative  h-150  " 
         onClose={closeModal}>
           <Transition.Child
             as={Fragment}
@@ -24,10 +26,10 @@ const ShoesDetails = ({isOpen,closeModal, addItem ,category ,price,image,descrip
             leaveFrom="opacity-100"
             leaveTo="opacity-0"
           >
-            <div className="fixed inset-0 bg-black/25" />
+            <div className="fixed inset-0  bg-black/25" />
           </Transition.Child>
-          <div className="fixed inset-0 overflow-y-auto">
-            <div className="flex min-h-full items-center justify-center p-4 text-center">
+          <div className="fixed inset-0 z-50 overflow-y-auto">
+            <div className="flex min-h-full  items-center justify-center p-4 text-center">
               <Transition.Child
                 as={Fragment}
                 enter="ease-out duration-300"
@@ -79,7 +81,7 @@ const ShoesDetails = ({isOpen,closeModal, addItem ,category ,price,image,descrip
               </div>
 
             <div className='flex justify-center items-center p-4 '>
-              <Button label="Add"  handleClick={() => addItem(id)} onClose={closeModal}/>    
+              <Button label="Add"  handleClick={() => addItemToCart(id)} onClose={closeModal}/>    
             </div>
             
 

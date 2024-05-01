@@ -7,7 +7,7 @@ import ShoesDetails from './ShoesDetails';
 import { CartContext } from '../(store)/shopping-cart-context';
 import Toasts from './Toasts';
 import Button from '@/app/_components/Button';
-const ProductsCard = ({id,category ,price,image ,allShoes,description }) => {
+const ProductsCard = ({id,category ,price,image ,description }) => {
   
   let [isOpen, setIsOpen] = useState(false);
   let [toastsIsOpen, setToastsIsOpen] = useState(false)
@@ -31,13 +31,6 @@ const ProductsCard = ({id,category ,price,image ,allShoes,description }) => {
                    <Image  src={image}className=' rounded-md object-contain'  fill priority  alt={category } />
 
             </div>
-            
-            {/* <img
-         src={image}
-         alt={category }
-         className="h-64 w-full object-cover transition duration-500 group-hover:scale-105 sm:h-72"
-          /> */}
-
             <div className='m-3 pb-10' >
 
                     <div className='mt-8 flex  gap-2.5 '>
@@ -58,7 +51,7 @@ const ProductsCard = ({id,category ,price,image ,allShoes,description }) => {
               </div>
 
     </div>
-    <ShoesDetails id={id} category={category} price={price} image={image} description={description}  allShoes={allShoes} isOpen={isOpen} closeModal={()=>setIsOpen(false)   }  addItem={addItemToCart}/>
+    <ShoesDetails id={id} category={category} price={price} image={image} description={description}  isOpen={isOpen} closeModal={()=>setIsOpen(false) } />
     <Toasts  category={category} toastsIsOpen={toastsIsOpen} closeModal={()=>setToastsIsOpen(false)   }  />
   
     </section>
