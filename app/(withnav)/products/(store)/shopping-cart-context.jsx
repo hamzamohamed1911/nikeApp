@@ -9,7 +9,6 @@ updateItemQuantity:()=>{},
 
 });
 
-
 export default function CartContextProvider({children}){
   const { allShoes} =useContext(APIContext);
 {/* The reducer function takes the current state and an action as arguments, and returns the new state based on the action type. */}
@@ -47,7 +46,6 @@ export default function CartContextProvider({children}){
       };
       
     }
-  
   
     if(action.type==='UPDATE_ITEM'){
       const updatedItems = [...state.items];
