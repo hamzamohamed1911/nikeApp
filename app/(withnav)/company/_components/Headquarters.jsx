@@ -43,16 +43,16 @@ const HeadquartersItem = React.memo(({ place, open, toggle }) => (
   <AiOutlineInfoCircle className='h-10 w-10 hover:text-gray-500 text-white '/>
   </button>
   {open[place.id] && (
-        <motion.div
-          initial={{ y: '100%' }}
-          animate={{ y: 0 }}
-          exit={{ y: '100%'  }}  
-          transition={{   stiffness: 500 }}
-          className='p-6 absolute bottom-0 right-0 left-0 bg-black'
-        >
-          <p className='text-white'>{place.Description}</p>
-        </motion.div>
-      )}
+  <motion.div
+    initial={{ y: '100%', opacity: 0 }} 
+    animate={{ y: 0, opacity: 1 }}
+    exit={{ y: '100%', opacity: 0 }} 
+    transition={{ type: 'spring', stiffness: 100, damping: 30 }} 
+    className='p-6 absolute bottom-0 right-0 left-0 bg-black'
+  >
+    <p className='text-white'>{place.Description}</p>
+  </motion.div>
+)}
   </div>
 
   <div className="mt-4 ">
