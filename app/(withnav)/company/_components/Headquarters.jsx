@@ -47,7 +47,7 @@ const HeadquartersItem = React.memo(({ place, open, toggle }) => (
           initial={{ y: 120 }}
           animate={{ y: 0 }}
           exit={{ y: 120 }}  
-          transition={{ type: 'spring', damping: 20, stiffness: 100 }}
+          transition={{   stiffness: 500 }}
           className='p-6 absolute bottom-0 right-0 left-0 bg-black'
         >
           <p className='text-white'>{place.Description}</p>
