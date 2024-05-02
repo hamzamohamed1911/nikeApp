@@ -36,11 +36,7 @@ const LeaderShip = () => {
 export default LeaderShip;
 const LeaderItem = React.memo(({ leader, openLeaderDetail }) => (
   <div className="group block pb-28 cursor-pointer" onClick={() => openLeaderDetail(leader)}>
-   <div
-           
-            className="group block pb-28 cursor-pointer"
-            onClick={() => openLeaderDetail(leader)}
-          >
+
      <Image
   width={0}
   height={0}
@@ -56,7 +52,7 @@ const LeaderItem = React.memo(({ leader, openLeaderDetail }) => (
               </h3>
               <p className="mt-1 text-sm text-gray-700">{leader.position}</p>
             </div>
-          </div>
+          
   </div>
 ));
 
