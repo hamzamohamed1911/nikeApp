@@ -5,9 +5,11 @@ import { leaderShip } from '@/constants';
 import Image from 'next/image';
 import LeaderDetail from './LeaderDetail';
 
+
+
 const LeaderShip = () => {
   const [selectedLeader, setSelectedLeader] = useState(null);
-  
+
   const openLeaderDetail = (leader) => {
     setSelectedLeader(leader);
   };
@@ -21,8 +23,21 @@ const LeaderShip = () => {
       <h1 className="font-palanquin font-bold text-3xl pb-6">Leadership</h1>
       <div className="grid grid-cols-2 gap-3 lg:grid-cols-4 lg:gap-8">
         {leaderShip.map((leader, id) => (
-          <div
-            key={id}
+          <LeaderItem key={id} leader={leader} openLeaderDetail={openLeaderDetail} />
+        ))}
+      </div>
+      <AnimatePresence>
+        {selectedLeader && <LeaderDetail leader={selectedLeader} onClose={closeLeaderDetail} />}
+      </AnimatePresence>
+    </section>
+  );
+};
+
+export default LeaderShip;
+const LeaderItem = React.memo(({ leader, openLeaderDetail }) => (
+  <div className="group block pb-28 cursor-pointer" onClick={() => openLeaderDetail(leader)}>
+   <div
+           
             className="group block pb-28 cursor-pointer"
             onClick={() => openLeaderDetail(leader)}
           >
@@ -42,15 +57,7 @@ const LeaderShip = () => {
               <p className="mt-1 text-sm text-gray-700">{leader.position}</p>
             </div>
           </div>
-        ))}
-      </div>
-      <AnimatePresence>
-        {selectedLeader && (
-          <LeaderDetail leader={selectedLeader} onClose={closeLeaderDetail} />
-        )}
-      </AnimatePresence>
-    </section>
-  );
-};
+  </div>
+));
 
-export default LeaderShip;
+
