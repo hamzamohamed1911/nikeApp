@@ -44,9 +44,9 @@ const HeadquartersItem = React.memo(({ place, open, toggle }) => (
   </button>
   {open[place.id] && (
         <motion.div
-          initial={{ y: 120 }}
+          initial={{ y: '100%' }}
           animate={{ y: 0 }}
-          exit={{ y: 120 }}  
+          exit={{ y: '100%'  }}  
           transition={{   stiffness: 500 }}
           className='p-6 absolute bottom-0 right-0 left-0 bg-black'
         >

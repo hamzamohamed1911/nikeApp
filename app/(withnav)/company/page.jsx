@@ -36,15 +36,15 @@ const Company = () => {
     </div>
 
 
-    <div className='bg-white font-palanquin text-md md:text-2xl lg:text-4xl padding text-bold'> 
+    <div className='bg-white font-palanquin text-lg md:text-2xl lg:text-4xl padding text-bold'> 
 
-   <h1 className='flex justify-center items-center '>
+   <h1 className='lg:flex lg:justify-center lg:items-center '>
    <span>
    <span className='text-coral-red   '>Nike ,  </span>  Inc. is a team comprised of the  <span className='text-coral-red  '>Nike ,  </span>  Jordan and
     </span>
    </h1>
 
-  <h1 className='flex justify-center'>
+  <h1 className='lg:flex lg:justify-center'>
   <span>
     Converse brands driven by a shared purpose to leave an 
   </span>
