@@ -48,9 +48,9 @@ const HeadquartersItem = React.memo(({ place, open, toggle }) => (
     animate={{ y: 0, opacity: 1 }}
     exit={{ y: '100%', opacity: 0 }} 
     transition={{ type: 'spring', stiffness: 100, damping: 30 }} 
-    className='p-6 absolute bottom-0 right-0 left-0 bg-black'
+    className=' absolute bottom-0 right-0 left-0 bg-black'
   >
-    <p className='text-white'>{place.Description}</p>
+    <p className='p-8 text-white text-xs md:text-lg lg:text-lg'>{place.Description}</p>
   </motion.div>
 )}
   </div>
