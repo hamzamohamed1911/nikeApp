@@ -8,9 +8,11 @@ import { isEmail, hasMinLength, isNotEmpty } from "@/util/validation";
 import { useAuth } from "@/store/Auth-context";
 
 export default function Login() {
+
   const { setIsLoggedIn, authUser, logIn } = useAuth();
   const [error, setError] = useState(false);
   const router = useRouter();
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const [didEdit, setdidEdit] = useState({
     email: false,
@@ -47,6 +49,7 @@ export default function Login() {
 
   const handleSubmit = async (e) => {
     e.preventDefault(); // Prevent default form submission behavior
+    setIsSubmitting(true);
     setError(false)
 
     try {
@@ -65,6 +68,7 @@ export default function Login() {
       setError(true);
       console.error("Error occurred during login:", err);
     }
+    setIsSubmitting(false);
 
   }
 
@@ -118,7 +122,7 @@ export default function Login() {
                       </div>
                     </div>
                     <div className="relative">
-                      <Button type="submit" label="Login" iconURL={arrowRight} /> {/* Set button type to "submit" */}
+                      <Button type="submit" label={`${isSubmitting ? 'Submitting...' :'login'}`} iconURL={arrowRight} /> 
                     </div>
                     {error && <h1 className="bg-primary rounded text-center text-red-500 p-6" >User is not valid. Cannot navigate to products.</h1>}
                     <Link href="/forgot-password" className="ms-auto text-sm font-medium text-coral-red hover:underline mt-2 ">forgot password?</Link>

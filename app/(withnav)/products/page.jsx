@@ -1,11 +1,11 @@
 'use client'
-import React, { useState, useContext, Suspense } from 'react';
+import React, { useState, useContext, Suspense, lazy } from 'react';
 import Image from 'next/image';
 
 import { loaderIcon } from '@/app/assets/icons';
 import { APIContext } from '@/store/api-context';
 
-const ProductsData = React.lazy(() => import('./(productsFils)/ProductsData'));
+const ProductsData =lazy(() => import('./(productsFils)/ProductsData'));
 
 const Products = () => {
   const {  allShoes } = useContext(APIContext);

@@ -13,10 +13,10 @@ const {signUp } =useAuth();
  const router = useRouter();
 
   const handleSubmit =async(e)=>{
-
+    e.preventDefault();
     const formDataObj =new FormData(e.target);
     const data = Object.fromEntries(formDataObj.entries());
-    e.preventDefault();('')
+   
     setError('');
   
     try{

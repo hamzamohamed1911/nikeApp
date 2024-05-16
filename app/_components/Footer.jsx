@@ -11,7 +11,7 @@ const Footer = () => {
       <div  className='max-container '>
     <div className='flex justify-between items-start gap-20 max-lg:flex-col '>
       <div className='flex flex-col items-start'>
-        <NavLink href="/home"  >
+        <NavLink href="/"  >
 
           <Image alt='footerLogo' src={footerLogo} width={150} height={64} className='m-0  ' style={{ width: 'auto', height: 'auto' }}/>
         </NavLink>
